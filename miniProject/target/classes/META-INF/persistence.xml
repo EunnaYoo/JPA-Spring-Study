@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<!-- db를 나눠서 사용 가능 -->
+	<!-- 주요 서정 정보
+		1. 활용하게 되는 DB 정보 
+		2. DB 종속적인 방언 즉 추상화된 library 등록
+		3. 실행 시 conole 창에 출력되는 정보들(sql 문장) 출력하는 설정 
+	-->
+	
+	<persistence-unit name="encore">
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+			<property name="javax.persistence.jdbc.user" value="SCOTT" />
+			<property name="javax.persistence.jdbc.password" value="TIGER" />
+	
+			<!-- 사용 DB의 언어로 변환해주는 방언처리 library 등록 -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+
+
+			<!-- 옵션 : table을 java 어노테이션을 통해서 자동 생성시키는 옵션들-->
+			
+			<!-- console창에 sql 문장 출력 -->
+			<property name="hibernate.show_sql" value="true" />  <!-- 생략시 실행된 sql문장 안 보임 -->
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+
+			
+		 	<property name="hibernate.hbm2ddl.auto" value="create" />
+			
+		</properties>
+	</persistence-unit>
+</persistence>
