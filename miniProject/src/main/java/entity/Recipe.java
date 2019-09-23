@@ -14,7 +14,7 @@ import lombok.Data;
 public class Recipe {
 	
 	@Id
-	//@Column(name = "recipe_code")
+	@Column(name = "recipe_code")
 	@GeneratedValue(generator="recipecode_id_seq")
 	private Long recipecode;
 	

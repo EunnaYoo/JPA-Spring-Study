@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 public class Menu {
 	@Id
-	//@Column(name = "menu_code")
+	@Column(name = "menu_code")
 	@GeneratedValue(generator="menucode_id_seq")
 	private int menucode;
 	

@@ -16,10 +16,10 @@ public class CRUD {
 		menu.setName("아이스 아메리카노");
 		em.persist(menu);
 		
-		Price p= new Price();
-		p.setPrice(3800);
-		p.setMenu(menu);
-		em.persist(p);
+//		Price p= new Price();
+//		p.setPrice(3800);
+//		p.setMenu(menu);
+		//em.persist(p);
 		
 		Recipe r= new Recipe();
 		r.setWater("80g");
@@ -31,8 +31,8 @@ public class CRUD {
 		Menu findM = em.find(Menu.class, menu.getMenucode());
 		System.out.println(findM);
 	
-		Price findP = em.find(Price.class, p.getPriceKey());
-		System.out.println(findP);
+		//Price findP = em.find(Price.class, p.getPriceKey());
+		//System.out.println(findP);
 		
 		Recipe findR = em.find(Recipe.class, r.getRecipecode());
 		System.out.println(findR);
